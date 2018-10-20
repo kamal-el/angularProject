@@ -1,0 +1,24 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': (postLoveIts > 0),
+                'list-group-item-danger': (postLoveIts < 0) }">
+	
+  	<div>
+  		<h4><strong> {{postTitle}}</strong></h4> <p [ngStyle]="{color: getColor()}" style = "text-align: right;"> {{postDate | date: 'short'}}</p><br><br>
+  		<p>{{postContent}} </p>
+
+  		<div class="row">
+        <div class="col col-md-1">
+          <button class="btn btn-success"
+                    (click)="like()">Love it</button> 
+        </div>
+        <div class="col col-md-2">
+          <button class="btn btn-danger" 
+                    (click)="dislike()"
+                    >Don't love it</button>
+        </div>
+        
+     </div>
+  	</div>
+
+
+</li>
